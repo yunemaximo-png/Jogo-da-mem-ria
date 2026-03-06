@@ -9,7 +9,6 @@
 .card{
     aspect-ratio: 3/4;
     width: 100%;
-    background-color: black;
     border-radius: 5px;
     position: relative;
     transition: all 400ms ease;
@@ -25,13 +24,12 @@
     border-radius: 5px;
 }
 .front{
-    background-image: url(../Imagens/Freddy1.png);
     transform: rotateY(180deg);
 }
 .back{
     background-image: url('../Imagens/fnaf_back.png');
     backface-visibility: hidden;
 }
-.card:hover{
+.reveal-card{
     transform: rotateY(180deg)
 }

@@ -21,24 +21,55 @@ const createElement = (tag, className)=> {
     return element;
 }
 
-const createCard = () => {
+let firstCard = '';
+let secondCard = '';
 
-    const card = createElement('div', 'card'); 
+const revealCard = ({target}) => {
+
+if (target.parentNode.createName.includes('reveal-card')) {
+    return;
+}
+
+if (firstCard === ''){
+    target.parentNode.classList.add('reveal-card');
+    firstCard = target.parentNode;
+} else if (secondCard === '') {
+ 
+    target.parentNode.classList.add('reveal-card');
+    secondCardCard = target.parentNode;
+
+    checkCards();
+
+
+}
+
+}
+
+function createCard(character) {
+
+    const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
+
+    front.style.backgroundImage = `url('../Imagens/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);
 
-   return card;
+    card.addEventListener('click', revealCard);
+    return card;
 
 }
 
 const loadGame = () => {
 
-    characters.forEach((character) => {
+    const duplicateCharacter = [ ...characters, ...characters ];
 
-        const card = createCard();
+    const shuffledArray = duplicateCharacter.sort(() => Math.random() - 0.5);
+
+    shuffledArray.forEach((character) => {
+
+        const card = createCard(character);
         grid.appendChild(card);
 
     });
