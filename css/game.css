@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-image: url(../Imagens/sala.png);
+    background-image: url(../imagem/sala.png);
     background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -55,7 +55,7 @@ header {
     transform: rotateY(180deg);
 }
 .back{
-    background-image: url('../Imagens/fnafBack.png');
+    background-image: url('../imagem/fnafbback.png');
     backface-visibility: hidden;
 }
 .reveal-card{
